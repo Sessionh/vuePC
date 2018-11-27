@@ -15,47 +15,7 @@ const app = {
 		lockingType: 0, // 是否锁屏
 		zIndex: -1, // 锁屏显示
 		lockingTop: '-200px',
-		menuList: [
-            {
-	            title: '系统管理',
-	            name: 'users',
-	            icon: '&#xe64c;',
-	            children: [
-	                {
-	                    title: '基本资源',
-	                    name: 'hosts',
-	                    children: [
-	                        {
-	                            path: '/userMessage',
-	                            name: 'userMessage',
-	                            title: '基本资料',
-	                            component: 'components/user/userMessage'
-	                            
-	                        }
-	                    ]
-	                },
-	                {
-	                    title: '用户管理',
-	                    path: '/user',
-	                    name: 'user',
-	                    component: 'components/user/user'
-	                },
-	                {
-	                    title: '操作审计',
-	                    path: '/action',
-	                    name: 'action',
-	                    component: 'components/user/action',
-	                },
-	                {
-	                    title: '角色管理',
-	                    path: '/userRole',
-	                    name: 'userRole',
-	                    component: 'components/user/userRole',
-	                }
-	            ]
-	        },
-
-	]
+		menuList: [], // 菜单栏 
 
 	},
 	mutations: {
@@ -148,25 +108,36 @@ const app = {
 		deleteTag(state, value) { // 删除 一项 Tag标签
 			let result = [];
 			state.tagList.forEach((res, index) => {
-				if(res.id !== value.id) {
+				// console.log(res.name, value.item.name)
+				if(res.name !== value.item.name) {
 					result.push(res)
 				} else {
-					if (index > 1) {
+					if (state.tagList.length > 2) {
 						if (res.name === state.checkedTag) {
-							const _tag = state.tagList[index - 1]
+							let _tag;
+							if (index + 1 === state.tagList.length) {
+								_tag = state.tagList[index - 1]
+							} else if (index + 1 < state.tagList.length) {
+								_tag = state.tagList[state.tagList.length - 1]
+		
+							}
 							state.checkedTag = _tag.name
 							value._that.$router.push(_tag.name)
 							console.log(_tag)
 							state.activeName = _tag.name + ',' + _tag.title
+
 						}
-					   
+						
+
 					} else {
 						state.checkedTag = 'homeMain'
 						state.activeName = ''
 						value._that.$router.push('home')
 					}
+				
 				}
 			})
+			console.log(result)
 			state.tagList = result
 		},
 		setCheckedTag (state, name) { // 设置当前选择 Tag
@@ -191,7 +162,7 @@ const app = {
 			state.tagList = result
 
 		},
-		closeAllTags (state) {
+		closeAllTags (state, _that) {
 			state.tagList = [
 				{
 			    	id: 1,
@@ -199,8 +170,10 @@ const app = {
 			    	title: '首页'
 			    }
 		    ]
-		    state.activeName = ''
-		    state.checkedTag = 'homeMain'
+		    state.activeName = '33'
+			state.checkedTag = 'homeMain'
+			_that.$router.push('home')
+			console.log( state.activeName);
 
 		},
 		// 动态添加全局路由

@@ -5,7 +5,7 @@
 			<div  ref="scrollBody" class="scrollDiv" @DOMMouseScroll="handleScroll" @mousewheel="handleScroll" :style="{left: (tagBodyLeft + 'px')}">
 			    <template v-for="item in tagList">
 			     	<Tag type="dot"
-			     	    @on-close="tagClose"
+			     	    @on-close="tagClose(item)"
 			     	    @click.native="tagClick(item)"
 				     	:name="item.id" 
 				     	:closable="item.name === 'homeMain' ? false : true" 
@@ -54,9 +54,9 @@
 
 		},
 		methods: {
-			tagClose (ev, id) { // 关闭一个标签
+			tagClose (value) { // 关闭一个标签
 				const _this = this;
-				this.$store.commit('deleteTag', {id: id, _that: _this})
+				this.$store.commit('deleteTag', {item: value, _that: _this})
 			},
 			tagClick (item) { // 标签点击事件
 				const name  = item.name + ',' + item.title
@@ -77,8 +77,8 @@
 
 			},
 			closeAllTags () { // 关闭 全部标签
-				this.$store.commit('closeAllTags')
-				this.$router.push('home')
+				this.$store.commit('closeAllTags', this)
+				
 
 			},
 			handleScroll (e) { // 鼠标滚动

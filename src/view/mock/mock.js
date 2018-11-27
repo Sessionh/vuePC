@@ -6,29 +6,44 @@ const menu = [{
         children: [{
             title: '基本资源',
             name: 'hosts',
+            icon: '&#xe634;',
             children: [{
                 path: '/userMessage',
                 name: 'userMessage',
                 title: '基本资料',
-                component: 'components/user/userMessage'
+                component: 'ui/user/userMessage'
 
             }]
         }, {
             title: '用户管理',
             path: '/user',
             name: 'user',
-            component: 'components/user/user'
+            component: 'ui/user/user'
         }, {
             title: '操作审计',
             path: '/action',
             name: 'action',
-            component: 'components/user/action',
+            component: 'ui/user/action',
         }, {
             title: '角色管理',
             path: '/userRole',
             name: 'userRole',
-            component: 'components/user/userRole',
+            component: 'ui/user/userRole',
         }]
+    },
+    {
+        title: '工具类',
+        name: 'toolKit',
+        icon: '&#xe64f;',
+        children: [
+            {
+                title: '流程图',
+                path: '/workflow',
+                name: 'workflow',
+                component: 'ui/workflow/workflow'
+            },
+            
+        ]
     },
 
 ];

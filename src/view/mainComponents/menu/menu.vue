@@ -8,7 +8,10 @@
 	            </template>
 	            <template v-for="itemMenu in item.children">
 		            <Submenu :name="itemMenu.name"   v-if="itemMenu.children instanceof Array && itemMenu.children.length > 0">
-		                <template slot="title">{{itemMenu.title}}</template>
+		                <template slot="title">
+							 <i class="iconfont" v-html="itemMenu.icon"></i>
+							{{itemMenu.title}}
+						</template>
 		                <MenuItem :name="menuName(itemMenuSub)" v-for="itemMenuSub in itemMenu.children" :key="itemMenuSub.name">{{itemMenuSub.title}}</MenuItem>
 		            </Submenu>
 		            <MenuItem  v-else  :name="menuName(itemMenu)">{{itemMenu.title}}</MenuItem>
