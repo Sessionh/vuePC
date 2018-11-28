@@ -19,6 +19,7 @@ const routerList = {
 }
 
 const router = new Router(routerList);
+
 router.beforeEach((to, from, next) => {
      iView.LoadingBar.start();
     let user = sessionStorage.getItem('jaxUserName')

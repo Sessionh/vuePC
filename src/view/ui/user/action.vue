@@ -1,11 +1,12 @@
 <template>
-    <Table :columns="columns1" :data="data1"></Table>
+    <Table :columns="columns1" :data="data1"  style="height: calc(100vh - 116px)"></Table>
 </template>
 <script>
     export default {
     	name: 'action',
         data () {
             return {
+                height: 300,
                 columns1: [
                     {
                         title: '凯撒的',
@@ -47,6 +48,13 @@
                     }
                 ]
             }
+        },
+        computed: {
+          
+
+        },
+        created () {
+            
         }
     }
 </script>

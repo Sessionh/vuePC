@@ -131,7 +131,7 @@ const app = {
 
 					} else {
 						state.checkedTag = 'homeMain'
-						state.activeName = ''
+						state.activeName = '33'
 						value._that.$router.push('home')
 					}
 				
@@ -178,7 +178,7 @@ const app = {
 		},
 		// 动态添加全局路由
 	    updateDefaultRouter (state, routes) {
-	      router.addRoutes(routes);
+		  router.addRoutes(routes);
 	      state.menuRouter = routes;
 	    },
 	    // 动态添加路由 不保存

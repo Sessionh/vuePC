@@ -63,9 +63,10 @@
 				<menuTags/>
 				<div class="contentView">
 					<keep-alive  :include="keepPage">
-                        <transition name="page">
+                        <!-- <transition name="page">
                             <router-view/>
-                        </transition>
+                        </transition> -->
+                        <router-view/>
 						
 					</keep-alive>
 				</div>
@@ -95,7 +96,7 @@ export default {
             menuShow: true,
             popupShow: false, // 个人中心 控制显示
             iconZ: 0, // 控制旋转动画效果
-            fullScreenType: false // 是否切换全屏
+            fullScreenType: false, // 是否切换全屏
         };
     },
     computed: {
@@ -121,8 +122,9 @@ export default {
         backLogin() {
             // 退出登陆
             sessionStorage.removeItem("jaxUserName");
+            // this.$router.go(0);
             this.$router.go(0);
-            // location.reload()
+            
         },
         mouseEnterUser() {
             this.popupShow = true;
@@ -140,6 +142,7 @@ export default {
         FullScreen() {
             let main = document.body;
             if (this.fullScreenType) {
+                
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
                 } else if (document.mozCancelFullScreen) {
@@ -149,6 +152,7 @@ export default {
                 } else if (document.msExitFullscreen) {
                     document.msExitFullscreen();
                 }
+                
             } else {
                 if (main.requestFullscreen) {
                     main.requestFullscreen();
@@ -159,7 +163,9 @@ export default {
                 } else if (main.msRequestFullscreen) {
                     main.msRequestFullscreen();
                 }
+                
             }
+                
         },
         onEscBack() {
             // 监听退出
@@ -190,10 +196,10 @@ export default {
 // .page-enter-active, .page-leave-active {
 //   transition: opacity .5s;
 // }
-.page-enter-active {
-  transition: opacity .6s;
-}
-.page-enter, .page-leave-to {
-  opacity: 0;
-}
+// .page-enter-active {
+//   transition: opacity .6s;
+// }
+// .page-enter, .page-leave-to {
+//   opacity: 0;
+// }
 </style>
