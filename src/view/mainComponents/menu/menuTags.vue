@@ -57,6 +57,7 @@
 			tagClose (value) { // 关闭一个标签
 				const _this = this;
 				this.$store.commit('deleteTag', {item: value, _that: _this})
+				this.$store.commit('setOpenNamesList', value)
 			},
 			tagClick (item) { // 标签点击事件
 				const name  = item.name + ',' + item.title
@@ -74,7 +75,6 @@
 			},
 			closeTags () { // 关闭 其他标签
 				this.$store.commit('closeTags')
-
 			},
 			closeAllTags () { // 关闭 全部标签
 				this.$store.commit('closeAllTags', this)
