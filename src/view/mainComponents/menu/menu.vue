@@ -49,7 +49,6 @@
 
 			},
 			onOpenChange (value) {
-				console.log(value)
 				this.$store.commit('setAllOpenNames', value);
 			},
 			menuName (itemMenu) {

@@ -61,7 +61,6 @@
 			},
 			tagClick (item) { // 标签点击事件
 				const name  = item.name + ',' + item.title
-				console.log(item.name)
 				this.$store.commit('setActiveName', name)
 				this.$store.commit('setCheckedTag', item.name)
 				this.$store.commit('setOpenNamesList', item)
