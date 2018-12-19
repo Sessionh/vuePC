@@ -115,58 +115,58 @@
 	}
 </script>
 <style lang="stylus" scoped>
-    .tags
-    	position relative
-    	height 40px
-    	
-		.content
-			// box-sizing border-box
-			height 100%
-			overflow hidden
-			background #f0f0f0
-			position relative
-			z-index 10
-			// box-shadow  0px 3px 5px #dcdee2
-			box-shadow   0 5px 5px -2px #c5c8ce
-			.scrollDiv
-				position absolute
-				z-index 5
-				padding 2px 5px
-				white-space nowrap
-				transition left .3s ease
-		.tagSelect
+.tags
+	position relative
+	height 40px
+	
+	.content
+		// box-sizing border-box
+		height 100%
+		overflow hidden
+		background #f0f0f0
+		position relative
+		z-index 10
+		// box-shadow  0px 3px 5px #dcdee2
+		box-shadow   0 5px 5px -2px #c5c8ce
+		.scrollDiv
 			position absolute
+			z-index 5
+			padding 2px 5px
+			white-space nowrap
+			transition left .3s ease
+	.tagSelect
+		position absolute
+		background-color #fff
+		height 40px
+		width 100px
+		top 0
+		right 0
+		z-index 12
+		box-shadow -3px 0 15px -3px #c5c8ce
+		.but
+			width 73px
+			margin 7px 0 8px 14px
+			padding 2px 0 2px 4px
+			background-color #2b85e4
+			border-radius 3px
+			border 1px solid #2b85e4
+			color #fff
+			cursor pointer
+			.icon
+				margin-top -1px
+		ul
+			text-align center
 			background-color #fff
-			height 40px
-			width 100px
-			top 0
-			right 0
-			z-index 12
-			box-shadow -3px 0 15px -3px #c5c8ce
-			.but
-				width 73px
-				margin 7px 0 8px 14px
-				padding 2px 0 2px 4px
-				background-color #2b85e4
-				border-radius 3px
-				border 1px solid #2b85e4
-				color #fff
-				cursor pointer
-				.icon
-					margin-top -1px
-			ul
-				text-align center
-				background-color #fff
-				cursor pointer
-				li
-					list-style none
-				li:nth-child(1)
-					padding 5px 0
-				li:nth-child(1):hover
-					background-color #f8f8f9
-				li:nth-child(2)
-					padding 5px 0
-				li:nth-child(2):hover
-					background-color #f8f8f9
+			cursor pointer
+			li
+				list-style none
+			li:nth-child(1)
+				padding 5px 0
+			li:nth-child(1):hover
+				background-color #f8f8f9
+			li:nth-child(2)
+				padding 5px 0
+			li:nth-child(2):hover
+				background-color #f8f8f9
 						
 </style>

@@ -111,12 +111,15 @@ export default {
         menuClick() {
             if (this.menuShow) {
                 this.menuWidth = 60;
-                setTimeout(() => {
-                    this.menuShow = false;
-                }, 250);
+                this.menuShow = false;
+                // setTimeout(() => {
+                //     this.menuShow = false;
+                // }, 250);
             } else {
                 this.menuWidth = 220;
-                this.menuShow = true;
+                 setTimeout(() => {
+                    this.menuShow = true;
+                }, 250);
             }
         },
         backLogin() {

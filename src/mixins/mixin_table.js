@@ -14,22 +14,6 @@ export const index = {
         };
     },
     methods: {
-        toggleShow (val) {
-            console.log(val)
-            console.log(this)
-        },
-        init () {
-            let _self = this;
-            setTimeout(() => {
-                window.onresize = function () {
-                    _self.$refs.echarts.resize();
-                };
-            }, 400);
-        },
-        ButClick () {
-            this.toggleShow(11);
-            this.data.push(['1970-08-01 03:02:01', 50])
-
-        }
+      
     }
 }
