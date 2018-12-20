@@ -59,6 +59,7 @@
 		},
 		methods: {
 			menuClick (val) { // 菜单点击
+			console.log(val)
 				let name = val.name + ',' + val.title
 				this.$store.commit('setTagList', name);
 				this.$store.commit('setActiveName', name);

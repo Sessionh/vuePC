@@ -41,7 +41,6 @@
 		},
 		methods: {
 			onSelectMenu (name) {
-
 				this.$store.commit('setTagList', name);
 				const result = name.split(',')
 				this.$store.commit('setCheckedTag', result[0]);

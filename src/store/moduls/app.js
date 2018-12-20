@@ -38,19 +38,21 @@ const app = {
 		},
 		setActiveName (state, name) { // 设置选择当前菜单
 			state.activeName = name
+			sessionStorage.setItem('activeName', state.activeName)
 		},
 		setOpenNames (state, name) {
 			if (name !== null && name !== undefined && name !== '') {
 				const str = state.openNames.indexOf(name)
-				console.log(str)
 				if (str === -1) {
 					state.openNames.push(name)
 				}
 			}
+			sessionStorage.setItem('openNames', state.openNames)
 
 		},
 		setAllOpenNames(state, val) {// 关闭菜单 更新展开数组
 			state.openNames = val
+			sessionStorage.setItem('openNames', state.openNames)
 
 		},
 		setOpenNamesList (state, val) { // 设置当前展开的菜单
@@ -88,6 +90,7 @@ const app = {
 			})
 
 			state.openNames = state.openNames.slice(0, state.openNames.length);
+			sessionStorage.setItem('openNames', state.openNames)
 			
 
 		},
@@ -104,11 +107,15 @@ const app = {
 					state.tagList.push({id: state.tagList.length + 1, name: list[0], title: list[1]})
 				}
 			}
+			sessionStorage.setItem('tags', JSON.stringify(state.tagList))
+		},
+		setSessionTagList(state, val) {
+			state.tagList = val;
+
 		},
 		deleteTag(state, value) { // 删除 一项 Tag标签
 			let result = [];
 			state.tagList.forEach((res, index) => {
-				// console.log(res.name, value.item.name)
 				if(res.name !== value.item.name) {
 					result.push(res)
 				} else {
@@ -123,7 +130,6 @@ const app = {
 							}
 							state.checkedTag = _tag.name
 							value._that.$router.push(_tag.name)
-							console.log(_tag)
 							state.activeName = _tag.name + ',' + _tag.title
 
 						}
@@ -132,16 +138,22 @@ const app = {
 					} else {
 						state.checkedTag = 'homeMain'
 						state.activeName = '33'
+						
+						
 						value._that.$router.push('home')
 					}
 				
 				}
 			})
-			console.log(result)
 			state.tagList = result
+			sessionStorage.setItem('tags', JSON.stringify(state.tagList))
+			sessionStorage.setItem('checkedTag', state.checkedTag);
+			sessionStorage.setItem('activeName', state.activeName)
+			
 		},
 		setCheckedTag (state, name) { // 设置当前选择 Tag
 			state.checkedTag = name
+			sessionStorage.setItem('checkedTag', name)
 
 		},
 		closeTags(state, name) {
@@ -160,6 +172,7 @@ const app = {
 				
 			})
 			state.tagList = result
+			sessionStorage.setItem('tags', JSON.stringify(state.tagList))
 
 		},
 		closeAllTags (state, _that) {
@@ -173,7 +186,10 @@ const app = {
 		    state.activeName = '33'
 			state.checkedTag = 'homeMain'
 			_that.$router.push('home')
-			console.log( state.activeName);
+
+			sessionStorage.setItem('checkedTag', state.checkedTag);
+			sessionStorage.setItem('tags', JSON.stringify(state.tagList))
+			sessionStorage.setItem('activeName', state.activeName)
 
 		},
 		// 动态添加全局路由
@@ -195,8 +211,14 @@ const app = {
 	    setRoutePageName (context, to) {
 			if (to.name !== context.state.checkedTag) {
 				context.state.checkedTag = to.name
+			
 				context.state.activeName = to.name + ',' + to.meta.title
 				context.commit('setOpenNamesList', to)
+
+				
+
+				sessionStorage.setItem('checkedTag', context.state.checkedTag);
+				sessionStorage.setItem('activeName', context.state.activeName)
 			}
 	    }
 	}

@@ -62,14 +62,36 @@ util.getRouterChildren = function(vm) {
             }
            
         });
-        console.log(str)
         menu[0].children.push(...str); // 添加首页
         console.log(menu)
         vm.$store.commit('updateDefaultRouter', menu); // 动态加入菜单
         vm.$store.commit('updateRouter', error); // 动态加入404页面
-        vm.$router.push({ // 调转首页
-            name: 'home'
-        });
+        const checkedTag = sessionStorage.getItem('checkedTag') // 选择的标签
+        const  activeName = sessionStorage.getItem('activeName') // 选中的菜单项
+        let  openNames = sessionStorage.getItem('openNames') // 展开的菜单
+        if (activeName !== null) {
+           
+            vm.$store.commit('setActiveName', activeName);
+
+        }
+        if (openNames !== null) {
+            let openNamesList = openNames.split(',')
+            vm.$store.commit('setAllOpenNames', openNamesList);
+        }
+      
+       
+        if (checkedTag !== null) {
+            vm.$store.commit('setCheckedTag', checkedTag);
+            vm.$router.push({
+                name: checkedTag
+            })
+        } else {
+            vm.$router.push({ // 调转首页
+                name: 'home'
+            });
+
+        }
+        
     });
 };
 

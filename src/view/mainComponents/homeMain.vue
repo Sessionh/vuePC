@@ -91,7 +91,7 @@
 
                     </Row><br>
 
-                    <Card style="height: calc(100vh - 352px)">
+                    <Card>
                         <Row>
                             <Col>
                                 <div class="echatDiv">

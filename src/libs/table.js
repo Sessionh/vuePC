@@ -13,6 +13,30 @@ export default {
             key: 'address'
         }
     ],
+    userRole: [
+        {
+            title: '名称',
+            key: 'name',
+            renderHeader: (h, params) => {
+                return h('div',{
+                    style: {
+                        background: '#ffffff',
+                        width: '100%',
+                        
+                    }
+
+                },'名称1')
+            }
+        },
+        {
+            title: '年轻',
+            key: 'age',
+        },
+        {
+            title: '权限',
+            key: 'address'
+        }
+    ],
     action: [
         {
             title: '凯撒的',

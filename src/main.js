@@ -23,12 +23,24 @@ new Vue({
 	mounted () {
 		const lockingType = sessionStorage.getItem('locking');
 		this.$store.commit('setlocking', lockingType);
+	
+		// this.$store.commit('setSessionTagList', sessionStorage.getItem('tagList'))
 		let user = sessionStorage.getItem('jaxUserName');
 	     if (user !== undefined && user !== null && user !== '') {
-	      let menu = JSON.parse(sessionStorage.getItem('menu'));
-	      this.$store.commit('setMenu', menu);
-	      util.getRouterChildren(this);
-	    }
+	        let menu = JSON.parse(sessionStorage.getItem('menu'));
+	        this.$store.commit('setMenu', menu);
+		    util.getRouterChildren(this);
+		  
+			const tags = JSON.parse(sessionStorage.getItem('tags'));
+			
+			
+			if (tags !== null) {
+				this.$store.commit('setSessionTagList', tags);
+			}
+		
+		}
+
+		
        
     },
 }).$mount('#app');

@@ -125,8 +125,14 @@ export default {
         backLogin() {
             // 退出登陆
             sessionStorage.removeItem("jaxUserName");
+            sessionStorage.removeItem("checkedTag");
+            sessionStorage.removeItem("activeName");
+            sessionStorage.removeItem("openNames");
+            sessionStorage.removeItem("tags");
+       
             // this.$router.go(0);
             this.$router.go(0);
+
             
         },
         mouseEnterUser() {
