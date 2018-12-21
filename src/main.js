@@ -11,10 +11,12 @@ import axios from 'axios';
 import  'mockjs';
 import './view/mock/index';
 import util from './libs/util.js'
+import componets from './components/index'
 
 Vue.prototype.$http = axios
 Vue.config.productionTip = false;
 Vue.use(Iview);
+Vue.use(componets);
 
 new Vue({
 	router,

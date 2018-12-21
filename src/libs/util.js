@@ -94,6 +94,25 @@ util.getRouterChildren = function(vm) {
         
     });
 };
+// 深拷贝
+util.copy = function deepCopy(val1, newData) {
+    let str = newData
+
+    for (let name in val1) {
+       if (typeof val1[name] === 'object') {
+            // str[name] = (val1[name].constructor === Array)? []:{};
+         
+           str[name] = (val1[name] instanceof Array)? []:{};
+          
+           deepCopy(val1[name], str[name])
+
+       } else {
+           str[name] = val1[name]
+       }
+    }
+    return str
+
+}
 
 // 日期转换
 util.formatDate = function(date, fmt) {

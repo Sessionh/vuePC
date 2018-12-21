@@ -8,7 +8,7 @@ export default {
     data () {
         return {
             height: 300,
-            columns1: tables.action,
+            columns1: tables.action(this),
             data1: [
                 {
                     name: 'John Brown',

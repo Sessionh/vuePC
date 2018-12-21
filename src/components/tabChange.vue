@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="tab" :style="{width: (tabWidth * tabList.length + 'px')}">
-            <div class="tab_title" v-for="item in tabList" key="item.id"  @click="tabClick(item)">
+            <div class="tab_title" v-for="item in tabList" :key="item.id"  @click="tabClick(item)">
                 <div class="context" :style="{color: item.id === changeThat ? '#2077ff' : '#666'}">
                     {{item.name}}
                 </div>
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="orWidth" :style="{width: ((tabWidth * tabList.length -50 ) + 'px')}">
+        <div class="orWidth" :style="{width: ((tabWidth * tabList.length -82 ) + 'px')}">
 
         </div>
 
@@ -77,6 +77,7 @@ export default {
         .context {
             font-size: 15px;
             padding: 5px 20px 10px 20px;
+            user-select: none; // 不可选中
         }
 
         .underline {
@@ -97,9 +98,10 @@ export default {
 
 .orWidth {
     // width: 400px;
-    height: 1px;
+    height: 0.5px;
     background: #beb7b7;
     transform: scaleY(0.5);
+    // -ms-transform:scaleY(0.5);/*ie9*/
     
 }
 

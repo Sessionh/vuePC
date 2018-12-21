@@ -8,7 +8,7 @@ export default {
     data () {
         return {
             height: 300,
-            columns1: tables.user,
+            columns1: tables.user(this),
             data1: [
                 {
                     name: 'John Brown',

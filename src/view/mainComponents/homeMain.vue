@@ -55,7 +55,7 @@
                        
                     </div>
                     <div class="search">
-                         <inputSearch/>
+                         <InputSearch borderColor="#fff"/>
                     </div>
                    
                    
@@ -64,7 +64,7 @@
                 <div>
 
                     <Row type="flex" justify="space-between">
-                        <Col span="5"  class="colClass" v-for="item in cardList" key="item.id">
+                        <Col span="5"  class="colClass" v-for="item in cardList" :key="item.id">
                             <Card  class="cardClass" :padding="0" :style="{background:  item.color}">
                                 <div class="context">
                                     <div class="context_title">
@@ -119,12 +119,10 @@
 import Echats from 'vue-echarts';
 import echartData from './echart.js';
 import {index} from '@/mixins/mixin_table.js';
-import inputSearch from '@/view/common/inputSearch.vue';
 import ICountUp from 'vue-countup-v2';
 export default {
     components: {
         Echats,
-        inputSearch,
         ICountUp,
     },
     mixins: [index],
