@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="orWidth" :style="{width: ((tabWidth * tabList.length -82 ) + 'px')}">
+        <div class="orWidth" :style="{width: ((tabWidth * tabList.length -76 ) + 'px')}">
 
         </div>
 

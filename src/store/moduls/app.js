@@ -1,4 +1,5 @@
 import router from '@/router/router.js'
+import { resolve } from 'path';
 const app = {
 	state: {
 		activeName: '', // 当前选择菜单
@@ -194,12 +195,22 @@ const app = {
 		},
 		// 动态添加全局路由
 	    updateDefaultRouter (state, routes) {
-		  router.addRoutes(routes);
-	      state.menuRouter = routes;
+		//   router.addRoutes(routes);
+		  state.menuRouter = routes;
+		  new Promise((resolve, reject) => {
+			router.addRoutes(routes)
+			resolve(55)
+
+		}).then(res => {
+			console.log(res);
+
+		})  
 	    },
 	    // 动态添加路由 不保存
 	    updateRouter (state,routes) {
-	      router.addRoutes(routes);
+			router.addRoutes(routes)
+			console.log(44)
+		
 	    },
 	    // 添加菜单
 	    setMenu (state, value) {

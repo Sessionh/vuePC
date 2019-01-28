@@ -1,9 +1,9 @@
 <template>
 	<div class="menuHide">
 		<ul class="menuUl">
-			<li class="iconLi" v-for="item in menuList">
+			<li class="iconLi" v-for="item in menuList" :key="item.name">
 				<div class="sub">
-					 <i class="iconfont icon" v-html="item.icon"></i>
+					<i class="iconfont icon" v-html="item.icon"></i>
 				</div>
 				<div class="drops" v-if="item.children instanceof Array && item.children.length > 0">
 					<dropDownBox>
@@ -11,14 +11,14 @@
 							<template v-for="itemMenu in item.children">
 								<li  v-if="itemMenu.children instanceof Array && itemMenu.children.length > 0">
 									<div class="menuTitle">
-									    {{itemMenu.title}}
-									    <i class="iconfont icon">&#xe631;</i>
+										{{itemMenu.title}}
+										<i class="iconfont icon">&#xe631;</i>
 									</div>
 									<div class="menuSub">
 										<dropDownBox>
 											<ul class="menuSubUl2">
 
-												<li v-for="itemMenuSub in itemMenu.children">
+												<li v-for="itemMenuSub in itemMenu.children" :key="itemMenuSub.name">
 													<div class="menuSubLi" @click="menuClick(itemMenuSub)">{{itemMenuSub.title}}</div>
 												</li>
 											</ul>
@@ -41,36 +41,36 @@
 	</div>
 </template>
 <script>
-	import dropDownBox from '../../common/dropDownBox.vue';
-	export default {
-		name: 'menuHide',
-		components: {
-			dropDownBox,
-		},
-		data () {
-			return {
-				
-			}
-		},
-		computed: {
-			menuList () {
-				return this.$store.state.app.menuList
-			},
-		},
-		methods: {
-			menuClick (val) { // 菜单点击
-			console.log(val)
-				let name = val.name + ',' + val.title
-				this.$store.commit('setTagList', name);
-				this.$store.commit('setActiveName', name);
-				this.$store.commit('setCheckedTag', val.name);
-				this.$store.commit('setOpenNamesList', val);
-				this.$router.push(val.name)
+import dropDownBox from '../../common/dropDownBox.vue';
+export default {
+    name: 'menuHide',
+    components: {
+        dropDownBox,
+    },
+    data () {
+        return {
+			
+        }
+    },
+    computed: {
+        menuList () {
+            return this.$store.state.app.menuList
+        },
+    },
+    methods: {
+        menuClick (val) { // 菜单点击
+            console.log(val)
+            let name = val.name + ',' + val.title
+            this.$store.commit('setTagList', name);
+            this.$store.commit('setActiveName', name);
+            this.$store.commit('setCheckedTag', val.name);
+            this.$store.commit('setOpenNamesList', val);
+            this.$router.push(val.name)
 
-			},
+        },
 
-		}
-	}
+    }
+}
 </script>
 <style lang="stylus" scoped>
 	.menuHide
@@ -91,8 +91,6 @@
 					cursor pointer
 					.icon
 						font-size 22px
-					
-					    
 				.drops
 					position absolute
 					left 73px

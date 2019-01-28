@@ -5,7 +5,7 @@
 				<img  src="./image/logo.png"/>
 			</div>
 			<div class="backLogin" @click="backLogin">
-				 <i class="iconfont headerLeft-icon icon">&#xe668;</i>注销
+				<i class="iconfont headerLeft-icon icon">&#xe668;</i>注销
 			</div>
 			<div class="userImg" @mouseenter="mouseEnterUser" @mouseleave="mouseleaveUser">
 				<div class="content">
@@ -16,7 +16,7 @@
 						admin
 					</div>
 					<div class="menuIcon col">
-						 <div class="iconfont headerLeft-icon icon" :style="{transform: 'rotateZ(' + iconZ + 'deg)'}">&#xe65c;</div>
+						<div class="iconfont headerLeft-icon icon" :style="{transform: 'rotateZ(' + iconZ + 'deg)'}">&#xe65c;</div>
 					</div>
 				</div>
 
@@ -27,25 +27,22 @@
 				</div>
 			</div>
 			<div class="fullScreen" @click="fullScreenClick">
-			   <Tooltip :content="fullScreenType ? '退出全屏': '全屏'" placement="bottom">
-		             <i class="iconfont headerLeft-icon icon" v-html="fullScreenType ? '&#xe826;' : '&#xe673;'"></i>
-		         
-		             <!-- <i class="iconfont icon-full_screen"></i> -->
-		        </Tooltip>
+                <Tooltip :content="fullScreenType ? '退出全屏': '全屏'" placement="bottom">
+                    <i class="iconfont headerLeft-icon icon" v-html="fullScreenType ? '&#xe826;' : '&#xe673;'"></i>
+                </Tooltip>
 			</div>
 			<div class="lockScreen">
-				  <Tooltip content="锁屏" placement="bottom">
-		             <i class="iconfont headerLeft-icon icon" @click="lockClick">&#xe653;</i>
-		        </Tooltip>
+				<Tooltip content="锁屏" placement="bottom">
+                    <i class="iconfont headerLeft-icon icon" @click="lockClick">&#xe653;</i>
+                </Tooltip>
 			</div>
 
 			<div class="message">
-				  <Tooltip content="消息" placement="bottom">
-		             <Badge dot>
-				        <Icon type="ios-notifications-outline icon" size="26"></Icon>
-				    </Badge>
-				    <!-- <Icon type="ios-notifications-outline icon" size="26"></Icon> -->
-		        </Tooltip>
+				<Tooltip content="消息" placement="bottom">
+                    <Badge dot>
+                        <Icon type="ios-notifications-outline icon" size="26"></Icon>
+                    </Badge>
+                </Tooltip>
 			</div>
 		</div>
 		<div class="contentMain">
@@ -117,7 +114,7 @@ export default {
                 // }, 250);
             } else {
                 this.menuWidth = 220;
-                 setTimeout(() => {
+                setTimeout(() => {
                     this.menuShow = true;
                 }, 250);
             }
@@ -131,7 +128,8 @@ export default {
             sessionStorage.removeItem("tags");
        
             // this.$router.go(0);
-            this.$router.go(0);
+            // this.$router.go(0);
+            location.reload()
 
             
         },
@@ -212,3 +210,4 @@ export default {
 //   opacity: 0;
 // }
 </style>
+

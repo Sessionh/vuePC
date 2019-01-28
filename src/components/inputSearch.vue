@@ -28,6 +28,10 @@ export default {
             type: String,
             default: '#ccc'
         },
+        placeHolder: {
+            type: String,
+            default: 'search...'
+        }
     },
     data () {
         return {
@@ -38,14 +42,14 @@ export default {
         }
     },
     methods: {
-        mouseleaveDiv (ev) {
+        mouseleaveDiv () {
             this.$refs.input.blur();
           
 
         },
-        mouseEnterDiv (ev) {
+        mouseEnterDiv () {
             setTimeout(() => {
-                this.inputInitData = 'search...'
+                this.inputInitData = this.placeHolder
 
             }, 100)
             this.divWidth = 205;

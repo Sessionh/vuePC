@@ -32,9 +32,9 @@ echart.getOptions = (vm) => {
         },
         tooltip: {
             trigger: 'axis',
-    //                       formatter: function (params) {
-    //                           return 'X: ' + params[0].data[0] + '<br>Y: ' + params[0].data[1];
-    //                       }
+            //                       formatter: function (params) {
+            //                           return 'X: ' + params[0].data[0] + '<br>Y: ' + params[0].data[1];
+            //                       }
         },
         legend: {
             right: 10,
@@ -168,9 +168,9 @@ echart.getOptions1 = (vm) => {
         },
         tooltip: {
             trigger: 'axis',
-    //                       formatter: function (params) {
-    //                           return 'X: ' + params[0].data[0] + '<br>Y: ' + params[0].data[1];
-    //                       }
+            //                       formatter: function (params) {
+            //                           return 'X: ' + params[0].data[0] + '<br>Y: ' + params[0].data[1];
+            //                       }
         },
         legend: {
             right: 10,
@@ -272,15 +272,15 @@ echart.getOptions1 = (vm) => {
 
                     }
                 },
-               markPoint: {
-                   data: [
-                    {
-                        name: '最大值',
-                        type: 'max',
-                    },
-                   ]
+                markPoint: {
+                    data: [
+                        {
+                            name: '最大值',
+                            type: 'max',
+                        },
+                    ]
 
-               },
+                },
                 symbolSize: symbolSize,
                 data: dataV,
                 label: { // 图形上的文本标签
@@ -308,18 +308,18 @@ echart.getOptions1 = (vm) => {
                 areaStyle: {
                     normal: {
                         color: {
-                          type: 'linear',
-                          x: 0,
-                          y: 0,
-                          x2: 0,
-                          y2: 1,
-                          colorStops: [{
-                            offset: 0, color: 'rgb(68, 183, 245)'
-                          }, {
-                            offset: 1, color: '#fff'
-                          }]
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0, color: 'rgb(68, 183, 245)'
+                            }, {
+                                offset: 1, color: '#fff'
+                            }]
                         }
-                      }
+                    }
 
                 },
                 symbolSize: 0,

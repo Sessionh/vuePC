@@ -6,7 +6,7 @@
 				<TabChange @tabClick="tabClick" :tabList="tabList"/>
 			</div>
 			<div class="header_right">
-				<InputSearch  @onSearch="onSearch"/>
+				<InputSearch  @onSearch="onSearch" placeHolder="搜索..."/>
 			</div>
 			</div>
 			<Table :columns="columns" :data="data1" style="height: calc(100vh - 206px);margin-top: 20px"></Table>

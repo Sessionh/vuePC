@@ -4,19 +4,19 @@
 	</div>
 </template>
 <script>
-	import dropDownBox from '../../common/dropDownBox.vue';
-	export default {
-		name: 'menuDrop',
-		components: {
-			dropDownBox,
-		},
-		data () {
-			return {
+import dropDownBox from '../../common/dropDownBox.vue';
+export default {
+    name: 'menuDrop',
+    components: {
+        dropDownBox,
+    },
+    data () {
+        return {
 
-			}
-		},
-		methods: {
+        }
+    },
+    methods: {
 
-		}
-	}
+    }
+}
 </script>
