@@ -2,12 +2,12 @@
 	<div>demo</div>
 </template>
 <script>
-	export default {
-		name: 'demos',
-		data () {
-			return {
+export default {
+    name: 'demos',
+    data () {
+        return {
 				
-			}
-		}
-	}
+        }
+    }
+}
 </script>
