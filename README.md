@@ -1,27 +1,29 @@
-# vuePC
+# vues
 
-#### 项目介绍
-搭建一个 pc 端 vuecli3.0 升级后又的版本
+## Project setup
+```
+npm install
+```
 
-#### 软件架构
-软件架构说明
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
+### Compiles and minifies for production
+```
+npm run build
+```
 
-#### 安装教程
+### Run your tests
+```
+npm run test
+```
 
-1. xxxx
-2. xxxx
-3. xxxx
+### Lints and fixes files
+```
+npm run lint
+```
 
-#### 使用说明
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
