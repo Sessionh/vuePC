@@ -1,6 +1,6 @@
 module.exports = {
     baseUrl: '/',
-    publicPath: '/vues/'
+    // publicPath: '/vues/'
     // configureWebpack: {
     //     devtool: 'source-map'
     // },
