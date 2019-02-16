@@ -16,14 +16,27 @@ util.getRouterChildren = function(vm) {
                 path: '/home',
                 name: 'homeMain',
                 component: addURL('mainComponents/homeMain')
+            },
+            {
+                path: '/persionalCenter',
+                name: 'persionalCenter',
+                component: addURL('mainComponents/user/persional_center')
+            },
+            {
+                path: '/userMessage',
+                name: 'userMessage',
+                component: addURL('mainComponents/user/user_message')
             }
         ]
     }];
-    let error = [{
-        path: '/error404',
-        name: 'error404',
-        component: addURL('mainComponents/error/404')
-    }];
+    let error = [
+        {
+            path: '/error404',
+            name: 'error404',
+            component: addURL('mainComponents/error/404')
+        }
+       
+    ];
     vm.$http.post('menu', {}).then(res => {
         console.log(res.data);
         let menuList = res.data;
@@ -34,7 +47,7 @@ util.getRouterChildren = function(vm) {
                 res.children.forEach(menu => {
                     if (menu.children instanceof Array && res.children.length > 0) {
                         menu.children.forEach (menuSub => {
-                             str.push(
+                            str.push(
                                 {
                                     path: menuSub.path,
                                     name: menuSub.name,
@@ -99,16 +112,16 @@ util.copy = function deepCopy(val1, newData) {
     let str = newData
 
     for (let name in val1) {
-       if (typeof val1[name] === 'object') {
+        if (typeof val1[name] === 'object') {
             // str[name] = (val1[name].constructor === Array)? []:{};
          
-           str[name] = (val1[name] instanceof Array)? []:{};
+            str[name] = (val1[name] instanceof Array)? []:{};
           
-           deepCopy(val1[name], str[name])
+            deepCopy(val1[name], str[name])
 
-       } else {
-           str[name] = val1[name]
-       }
+        } else {
+            str[name] = val1[name]
+        }
     }
     return str
 
@@ -136,4 +149,8 @@ util.formatDate = function(date, fmt) {
     }
     return fmt;
 };
+
+function padLeftZero (str) {
+    return ('00' + str).substr(str.length);
+}
 export default util;

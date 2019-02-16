@@ -20,7 +20,7 @@
 					</div>
 				</div>
 
-				<div class="popup" v-show="popupShow">
+				<div class="popup" v-show="popupShow" @click="persionalOn()">
 					<ul>
 						<li>个人中心</li>
 					</ul>
@@ -38,9 +38,9 @@
 			</div>
 
 			<div class="message">
-				<Tooltip content="消息" placement="bottom">
+				<Tooltip content="消息" placement="bottom" >
                     <Badge dot>
-                        <Icon type="ios-notifications-outline icon" size="26"></Icon>
+                        <Icon type="ios-notifications-outline icon" size="26" @click="messageClick()"></Icon>
                     </Badge>
                 </Tooltip>
 			</div>
@@ -182,6 +182,30 @@ export default {
             this.$refs.locking.setBoxValue(1000);
             sessionStorage.setItem("locking", 1);
         },
+        persionalOn() {
+            let val = {
+                _that: this,
+                tag: {
+                    id: 1000,
+                    name: 'persionalCenter',
+                    title: '个人中心'
+                }
+            };
+            this.$router.push('persionalCenter');
+            this.$store.commit('setTagsThis', val);
+        },
+        messageClick() {
+            let val = {
+                _that: this,
+                tag: {
+                    id: 1001,
+                    name: 'userMessage',
+                    title: '消息'
+                }
+            };
+            this.$router.push('userMessage');
+            this.$store.commit('setTagsThis', val);
+        }
            
     },
     created() {

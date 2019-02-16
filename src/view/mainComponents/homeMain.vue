@@ -13,7 +13,7 @@
                             Brandon Jhon
                         </div>
                         <div class="user_icon">
-                            <div class="icon1">
+                            <div class="icon1" @click="iconClick()">
                                   <i class="iconfont">&#xe665;</i>
                             </div>
                              <div class="icon2">
@@ -199,6 +199,19 @@ export default {
         },
         onReady() {
             // instance.update(that.endVal + 100);
+        },
+        iconClick() {
+            console.log(22);
+            let val = {
+                _that: this,
+                tag: {
+                    id: 1000,
+                    name: 'persionalCenter',
+                    title: '个人中心'
+                }
+            };
+            this.$router.push('persionalCenter');
+            this.$store.commit('setTagsThis', val);
         }
       
     },

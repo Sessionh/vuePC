@@ -42,6 +42,12 @@ const menu = [{
             name: 'workflow',
             component: 'ui/workflow/workflow'
         },
+        {
+            title: '流程图2',
+            path: '/newWorkflow',
+            name: 'newWorkflow',
+            component: 'ui/workflow/new_workflow'
+        },
         
     ]
 },

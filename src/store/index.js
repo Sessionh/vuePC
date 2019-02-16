@@ -5,10 +5,10 @@ import user from './moduls/user.js';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-	modules: {
-		app,
-		user,
-	}
+    modules: {
+        app,
+        user,
+    }
 
 });
 
