@@ -187,11 +187,11 @@ export default {
                 _that: this,
                 tag: {
                     id: 1000,
-                    name: 'persionalCenter',
+                    name: 'persionalCenterData',
                     title: '个人中心'
                 }
             };
-            this.$router.push('persionalCenter');
+            this.$router.push('persionalCenterData');
             this.$store.commit('setTagsThis', val);
         },
         messageClick() {
@@ -199,11 +199,11 @@ export default {
                 _that: this,
                 tag: {
                     id: 1001,
-                    name: 'userMessage',
+                    name: 'userMessageData',
                     title: '消息'
                 }
             };
-            this.$router.push('userMessage');
+            this.$router.push('userMessageData');
             this.$store.commit('setTagsThis', val);
         }
            

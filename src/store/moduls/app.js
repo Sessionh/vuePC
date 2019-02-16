@@ -203,6 +203,7 @@ const app = {
             });
             if (count === 0) {
                 state.tagList.push(val.tag);
+                state.activeName = '33'
                 state.checkedTag = val.tag.name;
                 val._that.$router.push(val.tag.name);
                 

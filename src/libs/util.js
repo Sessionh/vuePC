@@ -18,13 +18,13 @@ util.getRouterChildren = function(vm) {
                 component: addURL('mainComponents/homeMain')
             },
             {
-                path: '/persionalCenter',
-                name: 'persionalCenter',
+                path: '/persionalCenterData',
+                name: 'persionalCenterData',
                 component: addURL('mainComponents/user/persional_center')
             },
             {
-                path: '/userMessage',
-                name: 'userMessage',
+                path: '/userMessageData',
+                name: 'userMessageData',
                 component: addURL('mainComponents/user/user_message')
             }
         ]
