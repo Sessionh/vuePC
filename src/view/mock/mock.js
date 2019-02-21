@@ -53,6 +53,132 @@ const menu = [{
 },
 
 ];
+
+const treeDatas = {
+    edges: [
+        {
+            anchor: 'AutoDefault',
+            labelText: '',
+            source: 'start',
+            target: 'node-1',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '分支',
+            source: 'node-1',
+            target: 'node-2',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '分支',
+            source: 'node-2',
+            target: 'node-3',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '',
+            source: 'node-3',
+            target: 'node-5',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '',
+            source: 'node-4',
+            target: 'node-5',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '',
+            source: 'node-3',
+            target: 'endsDefalut',
+        },
+        {
+            anchor: 'AutoDefault',
+            labelText: '',
+            source: 'node-5',
+            target: 'node-7',
+        }
+
+    ],
+    nodes: [
+        {
+            id: 'start',
+            className: 'start',
+            text: 'start',
+            style: {
+                left: '50px',
+                top: '150px',
+            },
+
+        },
+        {
+            id: 'endsDefalut',
+            className: 'endsDefalut',
+            text: 'end',
+            style: {
+                left: '800px',
+                top: '150px',
+            },
+        },
+        {
+            id: 'node-1',
+            className: 'rect',
+            text: '测试',
+            style: {
+                left: '200px',
+                top: '150px',
+            },
+        },
+        {
+            id: 'node-2',
+            className: 'rect',
+            style: {
+                left: '400px',
+                top: '150px',
+            },
+            text: '快速',
+        },
+        {
+            id: 'node-3',
+            className: 'rect',
+            text: '立即配置',
+            style: {
+                left: '600px',
+                top: '150px',
+            },
+        },
+        {
+            id: 'node-4',
+            className: 'rect',
+            text: '分支1',
+            style: {
+                left: '400px',
+                top: '300px',
+            },
+        },
+        {
+            id: 'node-5',
+            className: 'rect',
+            text: '分支2',
+            style: {
+                left: '600px',
+                top: '300px',
+            },
+        },
+        {
+            id: 'node-7',
+            className: 'rect',
+            text: '分支3',
+            style: {
+                left: '800px',
+                top: '300px',
+            },
+        },
+        
+
+    ]
+}
+
 // 获取 mock.Random 对象
 const Random = Mock.Random;
 const demos = function(result) {
@@ -77,3 +203,4 @@ const demos = function(result) {
 
 Mock.mock('users', 'post', demos);
 Mock.mock('menu', 'post', menu);
+Mock.mock('treeData', 'post', treeDatas);

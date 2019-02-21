@@ -12,8 +12,11 @@ import  'mockjs';
 import './view/mock/index';
 import util from './libs/util.js'
 import componets from './components/index'
+import jsp from 'jsplumb'
 
 Vue.prototype.$http = axios
+Vue.prototype.$jsplumb = jsp.jsPlumb
+Vue.prototype.$util = jsp.jsPlumbUtil
 Vue.config.productionTip = false;
 Vue.use(Iview);
 Vue.use(componets);

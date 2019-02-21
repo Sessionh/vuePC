@@ -27,6 +27,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "iview": "^3.1.5",
     "jquery": "^3.3.1",
+    "jsplumb": "^2.9.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "mockjs": "^1.0.1-beta3",
