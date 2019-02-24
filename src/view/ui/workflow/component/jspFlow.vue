@@ -21,6 +21,7 @@
     </Modal>
     <div  v-for="node in nodes"
         :id="node.id"
+        :key="node.id"
         :class="node.className"
         ref="nodes"
         :style="node.style"
